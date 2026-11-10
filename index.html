@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>PRICE - HARD KEY SYSTEM</title>
+    <title>JAME - HARD KEY SYSTEM</title>
     <style>
         :root { --s: #5DC9FF; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body, html { height: 100%; width: 100%; background: #000; font-family: 'Segoe UI', sans-serif; overflow: hidden; user-select: none; }
-        
+
         #L { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--s); text-align: center; }
         #H { position: fixed; top: 60px; right: 10px; width: 220px; background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(15px); border-radius: 20px; padding: 15px; z-index: 9999; border: 1.5px solid var(--s); display: none; text-align: center; box-shadow: 0 10px 30px rgba(0,255,136,0.3); }
-        
+
         #O { font-size: 3.5rem; font-weight: 900; margin: 5px 0; }
-        .big { color: #ffb347; text-shadow: 0 0 15px #ffb347; } 
+        .big { color: #ffb347; text-shadow: 0 0 15px #ffb347; }
         .small { color: #5dc9ff; text-shadow: 0 0 15px #5dc9ff; }
-        
+
         .log-box { background: #080808; border-radius: 10px; padding: 8px; height: 80px; overflow-y: auto; font-size: 0.6rem; color: #00ff88; margin-top: 10px; border: 1px solid #1a1a1a; text-align: left; }
         #ST { font-size: 0.6rem; color: #ff4444; margin-top: 10px; font-weight: bold; }
         .f { position: absolute; inset: 0; height: 100%; width: 100%; border: none; z-index: 1; }
-        
-        /* Input ပုံစံကို ပိုကောင်းအောင် ပြင်ထားသည် */
+
         .in { background: #111; border: 2px solid var(--s); color: #fff; padding: 12px; border-radius: 10px; text-align: center; width: 260px; margin-bottom: 20px; outline: none; letter-spacing: 2px; font-weight: bold; font-size: 0.9rem; }
         .btn { background: var(--s); color: #000; border: none; padding: 12px 50px; border-radius: 10px; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
         .btn:active { transform: scale(0.95); opacity: 0.8; }
-        
+
         #CRASH { position: fixed; inset: 0; background: #fff; color: #000; z-index: 10001; display: none; justify-content: center; align-items: center; font-weight: 900; font-size: 1.2rem; text-align: center; }
     </style>
 </head>
@@ -33,14 +32,13 @@
 <div id="CRASH">KEY EXPIRED<br>SYSTEM PERMANENTLY LOCKED</div>
 
 <div id="L">
-    <h2 style="margin-bottom: 20px; color: #fff; text-shadow: 0 0 10px var(--s);">PRICE-KEY- LOGIN</h2>
+    <h2 style="margin-bottom: 20px; color: #fff; text-shadow: 0 0 10px var(--s);">JAME-KEY- LOGIN</h2>
     <input type="text" id="K" class="in" placeholder="ENTER ACCESS KEY" maxlength="30" autocomplete="off">
     <button class="btn" onclick="_START()">Access System</button>
     <p style="margin-top: 15px; font-size: 0.6rem; color: #555;">SECURITY STATUS: ACTIVE</p>
 </div>
 
-<iframe 
-  <
+<iframe
     src="https://www.shwe004.com/#/register?invitationCode=77135101443"
     class="f"
     title="ShweLottery"
@@ -62,7 +60,7 @@
 
     // VIP ၃ ရက်သုံး Keys (၅ ခု)
     const _HK = [
-        "PRICE-3D-X9A2-B7K1", "VIP-992-LOKI-4410", "KH-3D-7821-MQPZ", "DARK-V12-990-AX11", "GOLD-881-3DAY-77Q2"
+        "JAME-3D-X9A2-B7K1", "VIP-992-LOKI-4410", "KH-3D-7821-MQPZ", "DARK-V12-990-AX11", "GOLD-881-3DAY-77Q2"
     ];
 
     // Trial မိနစ် ၃၀ သုံး Keys (၅၀ ခု)
@@ -74,56 +72,53 @@
         "Q9W2E5", "R3T0Y8", "U1I2O3", "P9O8I7", "L5K2J1", "M8N4V1", "B9V2C5", "X3Z0X8", "C1V2B3", "N9M8A7"
     ];
 
-    const _LIM_3D = 3 * 24 * 60 * 60 * 1000; // 3 Days
-    const _LIM_30M = 30 * 60 * 1000;         // 30 Mins
+    const _LIM_3D = 3 * 24 * 60 * 60 * 1000;
+    const _LIM_30M = 30 * 60 * 1000;
 
     let _lastI = "", _lastP = "", _offX = 0, _offY = 0, _kU = "", _isT = false, _currL = 0;
 
-    const sW = new Audio('https://www.myinstants.com/media/sounds/evil-laugh.mp3'); 
+    const sW = new Audio('https://www.myinstants.com/media/sounds/evil-laugh.mp3');
     const sL = new Audio('https://www.myinstants.com/media/sounds/crying-meme-sound-effect.mp3');
 
-    function _A() { sW.play().then(()=>sW.pause()); sL.play().then(()=>sL.pause()); }
+    function _A() {
+        sW.play().then(()=>sW.pause());
+        sL.play().then(()=>sL.pause());
+    }
 
     function _START() {
         const k = document.getElementById("K").value.trim().toUpperCase();
-        
-        // ဘန်းထားသော Key ဟုတ်မဟုတ် စစ်သည်
-        if(localStorage.getItem("_B_" + k)) { 
-            document.getElementById("CRASH").style.display = "flex"; 
-            return; 
+
+        if(localStorage.getItem("_B_" + k)) {
+            document.getElementById("CRASH").style.display = "flex";
+            return;
         }
-        
+
         _A();
-        
-        // Master Key အတွက်
-        if(k === _MK) { 
-            _kU = k; _isT = false; _GO(); 
-        } 
-        // တခြား Key များအတွက်
+
+        if(k === _MK) {
+            _kU = k; _isT = false; _GO();
+        }
         else if(_HK.includes(k) || _TK.includes(k)) {
             let start = localStorage.getItem("_t_" + k);
-            
-            // သက်တမ်းကုန်ပြီးသား Key လားစစ်သည်
+
             if(start === "VOID") { _BURN(k); return; }
-            
-            // VIP လား Trial လား ခွဲခြားသတ်မှတ်သည်
+
             _currL = _HK.includes(k) ? _LIM_3D : _LIM_30M;
-            
-            if(!start) { 
-                start = Date.now().toString(); 
-                localStorage.setItem("_t_" + k, start); 
+
+            if(!start) {
+                start = Date.now().toString();
+                localStorage.setItem("_t_" + k, start);
             }
-            
-            // သက်တမ်းကုန်မကုန် စစ်သည်
-            if(Date.now() - parseInt(start) > _currL) { 
-                _BURN(k); 
-                return; 
+
+            if(Date.now() - parseInt(start) > _currL) {
+                _BURN(k);
+                return;
             }
-            
+
             _kU = k; _isT = true; _GO();
-        } 
-        else { 
-            alert("ACCESS DENIED: INVALID KEY"); 
+        }
+        else {
+            alert("ACCESS DENIED: INVALID KEY");
         }
     }
 
@@ -147,7 +142,7 @@
     }
 
     function _BURN(k) {
-        localStorage.setItem("_B_" + k, "TRUE"); 
+        localStorage.setItem("_B_" + k, "TRUE");
         localStorage.setItem("_t_" + k, "VOID");
         alert("KEY EXPIRED! REDIRECTING...");
         location.reload();
@@ -162,13 +157,13 @@
             if (next !== _lastI) {
                 if (_lastP !== "") {
                     let real = curr.number >= 5 ? "BIG" : "SMALL";
-                    if (real === _lastP) { 
-                        sW.currentTime = 0; sW.play().catch(()=>{}); 
-                        addLog(`RESULT: ${real} ✅`); 
-                    } 
-                    else { 
-                        sL.currentTime = 0; sL.play().catch(()=>{}); 
-                        addLog(`RESULT: ${real} ❌`); 
+                    if (real === _lastP) {
+                        sW.currentTime = 0; sW.play().catch(()=>{});
+                        addLog(`RESULT: ${real} ✅`);
+                    }
+                    else {
+                        sL.currentTime = 0; sL.play().catch(()=>{});
+                        addLog(`RESULT: ${real} ❌`);
                     }
                 }
                 _lastI = next;
@@ -180,9 +175,9 @@
 
     function addLog(msg) {
         const lb = document.getElementById("LOGS");
-        const div = document.createElement("div"); 
-        div.innerHTML = `> ${msg}`; 
-        lb.appendChild(div); 
+        const div = document.createElement("div");
+        div.innerHTML = `> ${msg}`;
+        lb.appendChild(div);
         lb.scrollTop = lb.scrollHeight;
     }
 
@@ -191,26 +186,26 @@
         let p = (l[0] === l[1]) ? (l[0] === "B" ? "S" : "B") : l[0];
         _lastP = (p === "B") ? "BIG" : "SMALL";
         const o = document.getElementById("O");
-        o.textContent = _lastP; 
+        o.textContent = _lastP;
         o.className = (_lastP === "BIG") ? "big" : "small";
     }
 
     function _DRAG() {
         const h = document.getElementById("H");
         let a = false, iX, iY;
-        h.addEventListener("touchstart", (e) => { 
-            iX = e.touches[0].clientX - _offX; 
-            iY = e.touches[0].clientY - _offY; 
-            a = true; 
+        h.addEventListener("touchstart", (e) => {
+            iX = e.touches[0].clientX - _offX;
+            iY = e.touches[0].clientY - _offY;
+            a = true;
         });
         h.addEventListener("touchend", () => a = false);
-        h.addEventListener("touchmove", (e) => { 
-            if (a) { 
-                _offX = e.touches[0].clientX - iX; 
-                _offY = e.touches[0].clientY - iY; 
-                h.style.transform = `translate3d(${_offX}px, ${_offY}px, 0)`; 
-                e.preventDefault(); 
-            } 
+        h.addEventListener("touchmove", (e) => {
+            if (a) {
+                _offX = e.touches[0].clientX - iX;
+                _offY = e.touches[0].clientY - iY;
+                h.style.transform = `translate3d(${_offX}px, ${_offY}px, 0)`;
+                e.preventDefault();
+            }
         }, {passive: false});
     }
 </script>
