@@ -1,38 +1,39 @@
+
 <!DOCTYPE html>
 <html lang="my">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>JAME - HARD KEY SYSTEM</title>
-    <style>
-        :root { --s: #5DC9FF; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body, html { height: 100%; width: 100%; background: #000; font-family: 'Segoe UI', sans-serif; overflow: hidden; user-select: none; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>JAME - HARD KEY SYSTEM</title>
+<style>
+:root { --s: #5DC9FF; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { height: 100%; width: 100%; background: #000; font-family: 'Segoe UI', sans-serif; overflow: hidden; user-select: none; }
 
-        #L { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--s); text-align: center; }
-        #H { position: fixed; top: 60px; right: 10px; width: 220px; background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(15px); border-radius: 20px; padding: 15px; z-index: 9999; border: 1.5px solid var(--s); display: none; text-align: center; box-shadow: 0 10px 30px rgba(0,255,136,0.3); }
+#L { position: fixed; inset: 0; background: #000; z-index: 10000; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--s); text-align: center; }
+#H { position: fixed; top: 60px; right: 10px; width: 220px; background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(15px); border-radius: 20px; padding: 15px; z-index: 9999; border: 1.5px solid var(--s); display: none; text-align: center; box-shadow: 0 10px 30px rgba(0,255,136,0.3); }
 
-        #O { font-size: 3.5rem; font-weight: 900; margin: 5px 0; }
-        .big { color: #ffb347; text-shadow: 0 0 15px #ffb347; }
-        .small { color: #5dc9ff; text-shadow: 0 0 15px #5dc9ff; }
+#O { font-size: 3.5rem; font-weight: 900; margin: 5px 0; }
+.big { color: #ffb347; text-shadow: 0 0 15px #ffb347; }
+.small { color: #5dc9ff; text-shadow: 0 0 15px #5dc9ff; }
 
-        .log-box { background: #080808; border-radius: 10px; padding: 8px; height: 80px; overflow-y: auto; font-size: 0.6rem; color: #00ff88; margin-top: 10px; border: 1px solid #1a1a1a; text-align: left; }
-        #ST { font-size: 0.6rem; color: #ff4444; margin-top: 10px; font-weight: bold; }
-        .f { position: absolute; inset: 0; height: 100%; width: 100%; border: none; z-index: 1; }
+.log-box { background: #080808; border-radius: 10px; padding: 8px; height: 80px; overflow-y: auto; font-size: 0.6rem; color: #00ff88; margin-top: 10px; border: 1px solid #1a1a1a; text-align: left; }
+#ST { font-size: 0.6rem; color: #ff4444; margin-top: 10px; font-weight: bold; }
+.f { position: absolute; inset: 0; height: 100%; width: 100%; border: none; z-index: 1; }
 
-        .in { background: #111; border: 2px solid var(--s); color: #fff; padding: 12px; border-radius: 10px; text-align: center; width: 260px; margin-bottom: 20px; outline: none; letter-spacing: 2px; font-weight: bold; font-size: 0.9rem; }
-        .btn { background: var(--s); color: #000; border: none; padding: 12px 50px; border-radius: 10px; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
-        .btn:active { transform: scale(0.95); opacity: 0.8; }
+.in { background: #111; border: 2px solid var(--s); color: #fff; padding: 12px; border-radius: 10px; text-align: center; width: 260px; margin-bottom: 20px; outline: none; letter-spacing: 2px; font-weight: bold; font-size: 0.9rem; }
+.btn { background: var(--s); color: #000; border: none; padding: 12px 50px; border-radius: 10px; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
+.btn:active { transform: scale(0.95); opacity: 0.8; }
 
-        #CRASH { position: fixed; inset: 0; background: #fff; color: #000; z-index: 10001; display: none; justify-content: center; align-items: center; font-weight: 900; font-size: 1.2rem; text-align: center; }
-    </style>
+#CRASH { position: fixed; inset: 0; background: #fff; color: #000; z-index: 10001; display: none; justify-content: center; align-items: center; font-weight: 900; font-size: 1.2rem; text-align: center; }
+</style>
 </head>
 <body>
 
 <div id="CRASH">KEY EXPIRED<br>SYSTEM PERMANENTLY LOCKED</div>
 
 <div id="L">
-    <h2 style="margin-bottom: 20px; color: #fff; text-shadow: 0 0 10px var(--s);">JAME-KEY- LOGIN</h2>
+    <h2 style="margin-bottom: 20px; color: #fff; text-shadow: 0 0 10px var(--s);">JAME-KEY-LOGIN</h2>
     <input type="text" id="K" class="in" placeholder="ENTER ACCESS KEY" maxlength="30" autocomplete="off">
     <button class="btn" onclick="_START()">Access System</button>
     <p style="margin-top: 15px; font-size: 0.6rem; color: #555;">SECURITY STATUS: ACTIVE</p>
@@ -54,160 +55,289 @@
 </div>
 
 <script>
-    // --- DATABASE & CONFIG ---
-    const _0x_U = "aHR0cHM6Ly9kcmF3LmFyLWxvdHRlcnkwMS5jb20vVHJ4V2luR28vVHJ4V2luR29fMU0vR2V0SGlzdG9yeUlzc3VlUGFnZS5qc29u";
-    const _MK = "200799"; // Master Key
+const _0x_U = "aHR0cHM6Ly9kcmF3LmFyLWxvdHRlcnkwMS5jb20vVHJ4V2luR28vVHJ4V2luR29fMU0vR2V0SGlzdG9yeUlzc3VlUGFnZS5qc29u";
+const _MK = "200799";
 
-    // VIP ၃ ရက်သုံး Keys (၅ ခု)
-    const _HK = [
-        "JAME-3D-X9A2-B7K1", "VIP-992-LOKI-4410", "KH-3D-7821-MQPZ", "DARK-V12-990-AX11", "GOLD-881-3DAY-77Q2"
-    ];
+const _HK = [
+    "PRICE-3D-X9A2-B7K1", "VIP-992-LOKI-4410", "KH-3D-7821-MQPZ", "DARK-V12-990-AX11", "GOLD-881-3DAY-77Q2"
+];
 
-    // Trial မိနစ် ၃၀ သုံး Keys (၅၀ ခု)
-    const _TK = [
-        "A1B2C3", "X9Y8Z7", "K5M2P1", "Q8W4E1", "R9T2Y5", "M3N0V8", "B1V2C3", "P9L8O7", "I5U2Y1", "H8G4F1",
-        "S9D2F5", "J3K0L8", "Z1X2C3", "N9M8B7", "V5C2X1", "A8S4D1", "F9G2H5", "Q3W0E8", "R1T2Y3", "U9I8O7",
-        "P5O2I1", "L8K4J1", "M9N2B5", "B3V0C8", "X1Z2X3", "C9V8B7", "N5M2A1", "S8D4F1", "G9H2J5", "K3L0P8",
-        "Q1W2E3", "R9T8Y7", "U5I2O1", "P8O4I1", "A9S2D5", "F3G0H8", "J1K2L3", "Z9X8C7", "V5B2N1", "M8N4B1",
-        "Q9W2E5", "R3T0Y8", "U1I2O3", "P9O8I7", "L5K2J1", "M8N4V1", "B9V2C5", "X3Z0X8", "C1V2B3", "N9M8A7"
-    ];
+const _TK = [
+    "A1B2C3", "X9Y8Z7", "K5M2P1", "Q8W4E1", "R9T2Y5", "M3N0V8", "B1V2C3", "P9L8O7", "I5U2Y1", "H8G4F1",
+    "S9D2F5", "J3K0L8", "Z1X2C3", "N9M8B7", "V5C2X1", "A8S4D1", "F9G2H5", "Q3W0E8", "R1T2Y3", "U9I8O7",
+    "P5O2I1", "L8K4J1", "M9N2B5", "B3V0C8", "X1Z2X3", "C9V8B7", "N5M2A1", "S8D4F1", "G9H2J5", "K3L0P8",
+    "Q1W2E3", "R9T8Y7", "U5I2O1", "P8O4I1", "A9S2D5", "F3G0H8", "J1K2L3", "Z9X8C7", "V5B2N1", "M8N4B1",
+    "Q9W2E5", "R3T0Y8", "U1I2O3", "P9O8I7", "L5K2J1", "M8N4V1", "B9V2C5", "X3Z0X8", "C1V2B3", "N9M8A7"
+];
 
-    const _LIM_3D = 3 * 24 * 60 * 60 * 1000;
-    const _LIM_30M = 30 * 60 * 1000;
+const _LIM_3D = 3 * 24 * 60 * 60 * 1000;
+const _LIM_30M = 30 * 60 * 1000;
 
-    let _lastI = "", _lastP = "", _offX = 0, _offY = 0, _kU = "", _isT = false, _currL = 0;
+let _lastI = "", _lastP = "", _offX = 0, _offY = 0, _kU = "", _isT = false, _currL = 0;
 
-    const sW = new Audio('https://www.myinstants.com/media/sounds/evil-laugh.mp3');
-    const sL = new Audio('https://www.myinstants.com/media/sounds/crying-meme-sound-effect.mp3');
+const sW = new Audio('https://www.myinstants.com/media/sounds/evil-laugh.mp3');
+const sL = new Audio('https://www.myinstants.com/media/sounds/crying-meme-sound-effect.mp3');
 
-    function _A() {
-        sW.play().then(()=>sW.pause());
-        sL.play().then(()=>sL.pause());
+function _A() {
+    sW.play().then(()=>sW.pause());
+    sL.play().then(()=>sL.pause());
+}
+
+function _START() {
+    const k = document.getElementById("K").value.trim().toUpperCase();
+
+    if(localStorage.getItem("_B_" + k)) {
+        document.getElementById("CRASH").style.display = "flex";
+        return;
     }
 
-    function _START() {
-        const k = document.getElementById("K").value.trim().toUpperCase();
+    _A();
 
-        if(localStorage.getItem("_B_" + k)) {
-            document.getElementById("CRASH").style.display = "flex";
+    if(k === _MK) {
+        _kU = k; _isT = false; _GO();
+    }
+    else if(_HK.includes(k) || _TK.includes(k)) {
+        let start = localStorage.getItem("_t_" + k);
+
+        if(start === "VOID") {
+            _BURN(k);
             return;
         }
 
-        _A();
+        _currL = _HK.includes(k) ? _LIM_3D : _LIM_30M;
 
-        if(k === _MK) {
-            _kU = k; _isT = false; _GO();
+        if(!start) {
+            start = Date.now().toString();
+            localStorage.setItem("_t_" + k, start);
         }
-        else if(_HK.includes(k) || _TK.includes(k)) {
-            let start = localStorage.getItem("_t_" + k);
 
-            if(start === "VOID") { _BURN(k); return; }
-
-            _currL = _HK.includes(k) ? _LIM_3D : _LIM_30M;
-
-            if(!start) {
-                start = Date.now().toString();
-                localStorage.setItem("_t_" + k, start);
-            }
-
-            if(Date.now() - parseInt(start) > _currL) {
-                _BURN(k);
-                return;
-            }
-
-            _kU = k; _isT = true; _GO();
+        if(Date.now() - parseInt(start) > _currL) {
+            _BURN(k);
+            return;
         }
-        else {
-            alert("ACCESS DENIED: INVALID KEY");
-        }
+
+        _kU = k; _isT = true; _GO();
+    }
+    else {
+        alert("ACCESS DENIED: INVALID KEY");
+    }
+}
+
+function _GO() {
+    document.getElementById("L").style.display = "none";
+    document.getElementById("H").style.display = "block";
+    setInterval(_FETCH, 2500);
+    if(_isT) setInterval(_TICK, 1000);
+    _DRAG();
+    addLog("Security: Verified");
+    addLog("Type: " + (_currL === _LIM_3D ? "VIP 3-DAYS" : (_kU === _MK ? "MASTER" : "TRIAL 30-MIN")));
+}
+
+function _TICK() {
+    let start = parseInt(localStorage.getItem("_t_" + _kU));
+
+    if(Date.now() - start > _currL) {
+        _BURN(_kU);
+        return;
     }
 
-    function _GO() {
-        document.getElementById("L").style.display = "none";
-        document.getElementById("H").style.display = "block";
-        setInterval(_FETCH, 2500);
-        if(_isT) setInterval(_TICK, 1000);
-        _DRAG();
-        addLog("Security: Verified");
-        addLog("Type: " + (_currL === _LIM_3D ? "VIP 3-DAYS" : (_kU === _MK ? "MASTER" : "TRIAL 30-MIN")));
-    }
+    let rem = _currL - (Date.now() - start);
+    let h = Math.floor(rem/3600000);
+    let m = Math.floor((rem%3600000)/60000);
+    let s = Math.floor((rem%60000)/1000);
 
-    function _TICK() {
-        let start = parseInt(localStorage.getItem("_t_" + _kU));
-        if(Date.now() - start > _currL) { _BURN(_kU); return; }
-        let rem = _currL - (Date.now() - start);
-        let h = Math.floor(rem/3600000);
-        let m = Math.floor((rem%3600000)/60000), s = Math.floor((rem%60000)/1000);
-        document.getElementById("ST").textContent = "EXPIRES IN: " + (h > 0 ? h + "h " : "") + m + "m " + s + "s";
-    }
+    document.getElementById("ST").textContent =
+        "EXPIRES IN: " + (h > 0 ? h + "h " : "") + m + "m " + s + "s";
+}
 
-    function _BURN(k) {
-        localStorage.setItem("_B_" + k, "TRUE");
-        localStorage.setItem("_t_" + k, "VOID");
-        alert("KEY EXPIRED! REDIRECTING...");
-        location.reload();
-    }
+function _BURN(k) {
+    localStorage.setItem("_B_" + k, "TRUE");
+    localStorage.setItem("_t_" + k, "VOID");
+    alert("KEY EXPIRED! REDIRECTING...");
+    location.reload();
+}
 
-    async function _FETCH() {
-        try {
-            let r = await fetch(atob(_0x_U));
-            let j = await r.json();
-            let list = j.data.list;
-            let curr = list[0], next = (BigInt(curr.issueNumber) + 1n).toString();
-            if (next !== _lastI) {
-                if (_lastP !== "") {
-                    let real = curr.number >= 5 ? "BIG" : "SMALL";
-                    if (real === _lastP) {
-                        sW.currentTime = 0; sW.play().catch(()=>{});
-                        addLog(`RESULT: ${real} ✅`);
-                    }
-                    else {
-                        sL.currentTime = 0; sL.play().catch(()=>{});
-                        addLog(`RESULT: ${real} ❌`);
-                    }
+async function _FETCH() {
+    try {
+        let r = await fetch(atob(_0x_U));
+        let j = await r.json();
+        let list = j.data.list;
+
+        let curr = list[0];
+        let next = (BigInt(curr.issueNumber) + 1n).toString();
+
+        if (next !== _lastI) {
+            if (_lastP !== "") {
+                let real = curr.number >= 5 ? "BIG" : "SMALL";
+
+                if (real === _lastP) {
+                    sW.currentTime = 0;
+                    sW.play().catch(()=>{});
+                    addLog(`RESULT: ${real} ✅`);
                 }
-                _lastI = next;
-                document.getElementById("PN").textContent = "ROUND " + next.slice(-4);
-                _LOGIC(list);
+                else {
+                    sL.currentTime = 0;
+                    sL.play().catch(()=>{});
+                    addLog(`RESULT: ${real} ❌`);
+                }
             }
-        } catch (e) {}
+
+            _lastI = next;
+            document.getElementById("PN").textContent = "ROUND " + next.slice(-4);
+            _LOGIC(list);
+        }
+    } catch (e) {}
+}
+
+function addLog(msg) {
+    const lb = document.getElementById("LOGS");
+    const div = document.createElement("div");
+    div.textContent = "> " + msg;
+    lb.appendChild(div);
+    lb.scrollTop = lb.scrollHeight;
+}
+
+// ================= JAME PATTERN ANALYSIS V2 =================
+
+function _LOGIC(list) {
+    const history = list
+        .slice(0, 100)
+        .reverse()
+        .map(x => Number(x.number) >= 5 ? "B" : "S");
+
+    if (history.length < 10) {
+        addLog("JAME PATTERN: Waiting for history");
+        return;
     }
 
-    function addLog(msg) {
-        const lb = document.getElementById("LOGS");
-        const div = document.createElement("div");
-        div.innerHTML = `> ${msg}`;
-        lb.appendChild(div);
-        lb.scrollTop = lb.scrollHeight;
+    const rate = (arr, side) =>
+        arr.length
+            ? arr.filter(x => x === side).length / arr.length
+            : 0.5;
+
+    // 1. Recent Trend Analysis
+    const recent5 = history.slice(-5);
+    const recent10 = history.slice(-10);
+    const recent20 = history.slice(-20);
+
+    const big5 = rate(recent5, "B");
+    const big10 = rate(recent10, "B");
+    const big20 = rate(recent20, "B");
+
+    // 2. Pattern Matching
+    const patternLength = 4;
+    const currentPattern = history
+        .slice(-patternLength)
+        .join("");
+
+    let patternBig = 0;
+    let patternSmall = 0;
+    let patternMatches = 0;
+
+    for (let i = 0; i <= history.length - patternLength - 1; i++) {
+        const oldPattern = history
+            .slice(i, i + patternLength)
+            .join("");
+
+        if (oldPattern === currentPattern) {
+            const next = history[i + patternLength];
+
+            if (next === "B") patternBig++;
+            if (next === "S") patternSmall++;
+
+            patternMatches++;
+        }
     }
 
-    function _LOGIC(list) {
-        let l = list.slice(0, 3).map(x => x.number >= 5 ? "B" : "S");
-        let p = (l[0] === l[1]) ? (l[0] === "B" ? "S" : "B") : l[0];
-        _lastP = (p === "B") ? "BIG" : "SMALL";
-        const o = document.getElementById("O");
-        o.textContent = _lastP;
-        o.className = (_lastP === "BIG") ? "big" : "small";
+    const patternBigRate = (patternBig + 2) / (patternMatches + 4);
+
+    // 3. Transition Analysis
+    const lastSide = history[history.length - 1];
+
+    let nextBig = 0;
+    let transitionMatches = 0;
+
+    for (let i = 0; i < history.length - 1; i++) {
+        if (history[i] === lastSide) {
+            if (history[i + 1] === "B") nextBig++;
+            transitionMatches++;
+        }
     }
 
-    function _DRAG() {
-        const h = document.getElementById("H");
-        let a = false, iX, iY;
-        h.addEventListener("touchstart", (e) => {
-            iX = e.touches[0].clientX - _offX;
-            iY = e.touches[0].clientY - _offY;
-            a = true;
-        });
-        h.addEventListener("touchend", () => a = false);
-        h.addEventListener("touchmove", (e) => {
-            if (a) {
-                _offX = e.touches[0].clientX - iX;
-                _offY = e.touches[0].clientY - iY;
-                h.style.transform = `translate3d(${_offX}px, ${_offY}px, 0)`;
-                e.preventDefault();
-            }
-        }, {passive: false});
+    const transitionBig = (nextBig + 1) / (transitionMatches + 2);
+
+    // 4. Streak Analysis
+    let streak = 1;
+
+    for (let i = history.length - 2; i >= 0; i--) {
+        if (history[i] === lastSide) {
+            streak++;
+        } else {
+            break;
+        }
     }
+
+    const streakBias = streak >= 3
+        ? (lastSide === "B" ? 0.04 : -0.04)
+        : 0;
+
+    // 5. Hybrid Weighted Analysis
+    const probabilityBig =
+        (0.20 * big5) +
+        (0.20 * big10) +
+        (0.15 * big20) +
+        (0.20 * transitionBig) +
+        (0.20 * patternBigRate) +
+        (0.05 * (0.5 + streakBias));
+
+    const confidence = Math.round(
+        Math.max(probabilityBig, 1 - probabilityBig) * 100
+    );
+
+    // 6. Final Prediction
+    const prediction = probabilityBig >= 0.5 ? "BIG" : "SMALL";
+
+    const o = document.getElementById("O");
+
+    _lastP = prediction;
+    o.textContent = prediction;
+    o.className = prediction === "BIG" ? "big" : "small";
+
+    // 7. Analysis Log
+    addLog("JAME PATTERN V2: " + currentPattern);
+    addLog("Pattern Matches: " + patternMatches);
+    addLog("Recent 5/10/20: " +
+        Math.round(big5 * 100) + "% / " +
+        Math.round(big10 * 100) + "% / " +
+        Math.round(big20 * 100) + "% BIG"
+    );
+    addLog("Transition: " + Math.round(transitionBig * 100) + "% BIG");
+    addLog("Streak: " + streak);
+    addLog("Confidence Score: " + confidence + "%");
+    addLog("PREDICTION: " + prediction);
+}
+
+function _DRAG() {
+    const h = document.getElementById("H");
+    let a = false, iX, iY;
+
+    h.addEventListener("touchstart", (e) => {
+        iX = e.touches[0].clientX - _offX;
+        iY = e.touches[0].clientY - _offY;
+        a = true;
+    });
+
+    h.addEventListener("touchend", () => a = false);
+
+    h.addEventListener("touchmove", (e) => {
+        if (a) {
+            _offX = e.touches[0].clientX - iX;
+            _offY = e.touches[0].clientY - iY;
+            h.style.transform = `translate3d(${_offX}px, ${_offY}px, 0)`;
+            e.preventDefault();
+        }
+    }, {passive: false});
+}
 </script>
 </body>
 </html>
